@@ -1,4 +1,5 @@
 
+import 'package:appwithfirebase/core/controller/checkOutController.dart';
 import 'package:appwithfirebase/helper/locatStorageData.dart';
 import 'package:get/get.dart';
 import '../core/controller/authController.dart';
@@ -14,6 +15,7 @@ Get.lazyPut(() => BottomNaveBarController());
 Get.lazyPut(() => HomePageController());
 Get.lazyPut(() => CartViewController());
 Get.lazyPut(() => LocalStorageData());
+Get.lazyPut(() => CheckOutController());
   }
 
 }

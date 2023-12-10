@@ -24,6 +24,9 @@ class AuthControler extends GetxController {
     // TODO: implement onInit
     super.onInit();
     _user.bindStream(_auth.authStateChanges());
+    if(_auth.currentUser!=null){
+      getCurrentUserData(_auth.currentUser!.uid);
+    }
   }
 
   void googleSignIn() async {
@@ -48,9 +51,7 @@ class AuthControler extends GetxController {
       await _auth.signInWithEmailAndPassword(email: email, password: password)
           .then((value)async{
 
-            await FireStoreUser().getCurrentUser(value.user!.uid).then((value){
-              setUser(UserModel.fromJson(value.data() as Map));
-            });
+        getCurrentUserData(value.user!.uid);
 
       });
 
@@ -92,6 +93,12 @@ class AuthControler extends GetxController {
     );
     await FireStoreUser().addUserToFireStore(userModel);
     setUser(userModel);
+  }
+
+  void getCurrentUserData (String uid)async{
+    await FireStoreUser().getCurrentUser(uid).then((value){
+      setUser(UserModel.fromJson(value.data() as Map));
+    });
   }
 
   void setUser(UserModel userModel) async {

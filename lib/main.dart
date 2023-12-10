@@ -1,5 +1,6 @@
 
 
+import 'package:appwithfirebase/constance.dart';
 import 'package:appwithfirebase/core/controller/cartController.dart';
 import 'package:appwithfirebase/core/controller/viewcontrol.dart';
 import 'package:appwithfirebase/helper/binding.dart';
@@ -29,6 +30,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: ViewControl(),
       theme: ThemeData(
+        colorScheme: Theme.of(context).colorScheme.copyWith(
+          primary: primaryColor,
+        ),
         fontFamily: 'SourceSans',
       ),
       routes: {

@@ -46,6 +46,9 @@ dependencies:
   path: ^1.8.3
   shared_preferences: ^2.2.2
   flutter_svg: ^2.0.9
+  status_change:
+
+
 
 dev_dependencies:
   flutter_test:

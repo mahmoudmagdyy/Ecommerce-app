@@ -1,6 +1,6 @@
-
 import 'package:appwithfirebase/core/controller/cartController.dart';
 import 'package:appwithfirebase/constance.dart';
+import 'package:appwithfirebase/view/checkOut/checkOutView.dart';
 import 'package:appwithfirebase/view/components/customText.dart';
 import 'package:appwithfirebase/view/components/custom_buttom.dart';
 import 'package:flutter/material.dart';
@@ -167,7 +167,9 @@ class CartView extends StatelessWidget {
                                 child: CustomButton(
                                   text: 'CHECKOUT',
                                   color: primaryColor,
-                                  onPress: () {},
+                                  onPress: () {
+                                    Get.to(HorizontalExample());
+                                  },
                                 ),
                               )
                             ],
